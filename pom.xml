@@ -22,6 +22,7 @@
         <subproject>chat-model-example</subproject>
         <subproject>mistral-ai-api-example</subproject>
         <subproject>ollama-api-example</subproject>
+        <subproject>rag-example</subproject>
     </subprojects>
     <dependencyManagement>
         <dependencies>

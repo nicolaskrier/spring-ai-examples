@@ -23,6 +23,16 @@
     - Chat memory,
     - Request and response message logging.
 
+### 2️⃣ Part 2 🚧
+
+- **RAG**: Example covering the following features:
+    - Thinking LLM,
+    - JSON structured output,
+    - Chat memory,
+    - Request and response message logging,
+    - JSON data with metadata reading to add documents to the vector store,
+    - Question and answer with a filtered search limiting data retrieval from the vector store.
+
 ## 🧠 Models
 
 ### Chat Models
@@ -32,4 +42,12 @@
     - Qwen 3 14B.
 - **Mistral AI**:
     - Mistral Small Latest,
+    - Mistral Medium Latest,
     - Magistral Medium Latest.
+
+### Embedding Models
+
+- **Ollama**:
+    - Qwen 3 Embedding Latest.
+- **Mistral AI**:
+    - Mistral Embed.
