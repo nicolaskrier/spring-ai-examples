@@ -25,8 +25,8 @@ class ChatModelExample {
         };
     }
 
-    public static void main(String[] args) {
-        SpringApplication.run(ChatModelExample.class, args);
+    void main() {
+        SpringApplication.run(ChatModelExample.class);
     }
 
 }

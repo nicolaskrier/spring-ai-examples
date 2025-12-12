@@ -42,8 +42,8 @@ class OllamaApiExample {
         };
     }
 
-    public static void main(String[] args) {
-        SpringApplication.run(OllamaApiExample.class, args);
+    void main() {
+        SpringApplication.run(OllamaApiExample.class);
     }
 
 }

@@ -50,8 +50,8 @@ class MistralAiApiExample {
         };
     }
 
-    public static void main(String[] args) {
-        SpringApplication.run(MistralAiApiExample.class, args);
+    void main() {
+        SpringApplication.run(MistralAiApiExample.class);
     }
 
 }

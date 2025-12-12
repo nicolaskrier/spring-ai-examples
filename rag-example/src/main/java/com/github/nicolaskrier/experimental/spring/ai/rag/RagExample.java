@@ -224,7 +224,7 @@ class RagExample {
         }
     }
 
-    public static void main(String[] args) {
+    void main(String[] args) {
         SpringApplication.run(RagExample.class, args);
     }
 

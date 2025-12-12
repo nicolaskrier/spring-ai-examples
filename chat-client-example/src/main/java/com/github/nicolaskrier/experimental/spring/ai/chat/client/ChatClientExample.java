@@ -118,7 +118,7 @@ class ChatClientExample {
         }
     }
 
-    public static void main(String[] args) {
+    void main(String[] args) {
         SpringApplication.run(ChatClientExample.class, args);
     }
 
