@@ -1,0 +1,3 @@
+Who is the pope having the pontiff number {searched_pope_pontiff_number}?
+
+{format}
