@@ -1,0 +1,3 @@
+Who is the {searched_pope} pope?
+
+{format}

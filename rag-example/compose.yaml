@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: 'postgres:18.3'
+    environment:
+      - 'POSTGRES_DB=rag_example'
+      - 'POSTGRES_PASSWORD=secret'
+      - 'POSTGRES_USER=user'
+    ports:
+      - '5432'
+  qdrant:
+    image: 'qdrant/qdrant:v1.17.0'
+    ports:
+      - '6334'
