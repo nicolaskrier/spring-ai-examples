@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: 'postgres:18.3'
+    environment:
+      - 'POSTGRES_DB=mcp_example'
+      - 'POSTGRES_PASSWORD=secret'
+      - 'POSTGRES_USER=user'
+    ports:
+      - '5432'
