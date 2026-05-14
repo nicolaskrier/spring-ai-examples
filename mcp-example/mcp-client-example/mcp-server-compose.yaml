@@ -1,0 +1,9 @@
+services:
+  pope-search-mcp-server:
+    image: 'ghcr.io/nicolaskrier/pope-search-mcp-server:latest'
+    ports:
+      - '8080:8080'
+  time-mcp-server:
+    image: 'ghcr.io/nicolaskrier/time-mcp-server:latest'
+    ports:
+      - '8081:8081'
