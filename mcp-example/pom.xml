@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.1.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 http://maven.apache.org/xsd/maven-4.1.0.xsd">
+    <modelVersion>4.1.0</modelVersion>
+    <parent>
+        <groupId>com.github.nicolaskrier.experimental</groupId>
+        <artifactId>spring-ai-examples</artifactId>
+    </parent>
+    <artifactId>mcp-example</artifactId>
+    <packaging>pom</packaging>
+    <properties>
+        <image.name>ghcr.io/nicolaskrier/${project.name}</image.name>
+    </properties>
+    <subprojects>
+        <subproject>mcp-client-example</subproject>
+        <subproject>pope-search-mcp-server</subproject>
+        <subproject>time-mcp-server</subproject>
+    </subprojects>
+</project>

@@ -1,0 +1,2 @@
+Who is the previous pope based on the pontiff number of the latest searched pope?
+The pontiff number must be decremented by one only.
