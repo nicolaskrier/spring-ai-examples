@@ -57,8 +57,7 @@ class ToolsExample {
     ChatClient chatClient(ChatClient.Builder chatClientBuilder, ChatMemory chatMemory, PopeSearchTools popeSearchTools, ToolCallback currentDateTimeToolCallback) {
         return chatClientBuilder.defaultSystem(systemPromptResource)
                 .defaultAdvisors(advisorSpec -> advisorSpec.param(ChatMemory.CONVERSATION_ID, UUID.randomUUID()))
-                .defaultTools(popeSearchTools)
-                .defaultToolCallbacks(currentDateTimeToolCallback)
+                .defaultTools(currentDateTimeToolCallback, popeSearchTools)
                 .defaultAdvisors(MessageChatMemoryAdvisor.builder(chatMemory).build(), new SimpleLoggerAdvisor())
                 .build();
     }
@@ -92,7 +91,7 @@ class ToolsExample {
     private static Pope searchPope(Prompt prompt, ChatClient chatClient) {
         return chatClient.prompt(prompt)
                 .call()
-                .entity(Pope.class);
+                .entity(Pope.class, ChatClient.EntityParamSpec::validateSchema);
     }
 
     private Prompt createUserPrompt() {

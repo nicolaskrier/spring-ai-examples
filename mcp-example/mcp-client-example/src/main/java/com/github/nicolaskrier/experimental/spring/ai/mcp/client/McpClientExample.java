@@ -49,7 +49,7 @@ class McpClientExample {
         return chatClientBuilder.defaultSystem(systemPromptResource)
                 .defaultAdvisors(advisorSpec -> advisorSpec.param(ChatMemory.CONVERSATION_ID, UUID.randomUUID()))
                 .defaultAdvisors(MessageChatMemoryAdvisor.builder(chatMemory).build(), new SimpleLoggerAdvisor())
-                .defaultToolCallbacks(toolCallbackProvider)
+                .defaultTools(toolCallbackProvider)
                 .build();
     }
 
@@ -82,7 +82,7 @@ class McpClientExample {
     private static Pope searchPope(Prompt prompt, ChatClient chatClient) {
         return chatClient.prompt(prompt)
                 .call()
-                .entity(Pope.class);
+                .entity(Pope.class, ChatClient.EntityParamSpec::validateSchema);
     }
 
     private Prompt createUserPrompt() {

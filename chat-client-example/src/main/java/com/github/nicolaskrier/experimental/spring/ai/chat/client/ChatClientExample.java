@@ -2,7 +2,6 @@ package com.github.nicolaskrier.experimental.spring.ai.chat.client;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.ai.chat.client.AdvisorParams;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
@@ -47,7 +46,6 @@ class ChatClientExample {
     @Bean
     ChatClient chatClient(ChatClient.Builder chatClientBuilder, ChatMemory chatMemory) {
         return chatClientBuilder.defaultSystem(systemPromptResource)
-                .defaultAdvisors(AdvisorParams.ENABLE_NATIVE_STRUCTURED_OUTPUT)
                 .defaultAdvisors(advisorSpec -> advisorSpec.param(ChatMemory.CONVERSATION_ID, UUID.randomUUID()))
                 .defaultAdvisors(MessageChatMemoryAdvisor.builder(chatMemory).build(), new SimpleLoggerAdvisor())
                 .build();
@@ -82,7 +80,7 @@ class ChatClientExample {
     private static Pope searchPope(Prompt prompt, ChatClient chatClient) {
         return chatClient.prompt(prompt)
                 .call()
-                .entity(Pope.class);
+                .entity(Pope.class, entityParamSpec -> entityParamSpec.useProviderStructuredOutput().validateSchema());
     }
 
     private Prompt createUserPrompt() {

@@ -1,14 +1,16 @@
 package com.github.nicolaskrier.experimental.spring.ai.chat.client;
 
+import org.jspecify.annotations.Nullable;
+
 import java.time.LocalDate;
 import java.util.List;
 
 record Pope(
         int pontiffNumber,
         LocalDate pontiffStartDate,
-        LocalDate pontiffEndDate,
+        @Nullable LocalDate pontiffEndDate,
         LocalDate birthDate,
-        LocalDate deathDate,
+        @Nullable LocalDate deathDate,
         String englishName,
         String latinName,
         String personalName,

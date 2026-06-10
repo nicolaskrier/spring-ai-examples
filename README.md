@@ -53,8 +53,7 @@
     - Qwen 3.5 9B.
 - **Mistral AI**:
     - Ministral 14B Latest,
-    - Mistral Medium 3.5,
-    - Magistral Medium Latest.
+    - Mistral Medium 3.5.
 
 ### Embedding Models
 
