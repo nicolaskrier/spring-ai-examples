@@ -91,7 +91,7 @@ class ToolsExample {
     private static Pope searchPope(Prompt prompt, ChatClient chatClient) {
         return chatClient.prompt(prompt)
                 .call()
-                .entity(Pope.class, ChatClient.EntityParamSpec::validateSchema);
+                .entity(Pope.class, entityParamSpec -> entityParamSpec.useProviderStructuredOutput().validateSchema());
     }
 
     private Prompt createUserPrompt() {
