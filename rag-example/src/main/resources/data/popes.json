@@ -1,0 +1,55 @@
+[
+  {
+    "pontiffNumber": 264,
+    "pontiffStartDate": "1978-10-16",
+    "pontiffEndDate": "2005-04-02",
+    "birthDate": "1920-05-18",
+    "deathDate": "2005-04-02",
+    "englishName": "John Paul II",
+    "latinName": "IOANNES PAULUS Secundus",
+    "personalName": "Karol Józef Wojtyła",
+    "nationalities": [
+      "Polish"
+    ]
+  },
+  {
+    "pontiffNumber": 265,
+    "pontiffStartDate": "2005-04-19",
+    "pontiffEndDate": "2013-02-28",
+    "birthDate": "1927-04-16",
+    "deathDate": "2022-12-31",
+    "englishName": "Benedict XVI",
+    "latinName": "BENEDICTVS Sextus Decimus",
+    "personalName": "Joseph Alois Ratzinger",
+    "nationalities": [
+      "German"
+    ]
+  },
+  {
+    "pontiffNumber": 266,
+    "pontiffStartDate": "2013-03-13",
+    "pontiffEndDate": "2025-04-21",
+    "birthDate": "1936-12-17",
+    "deathDate": "2025-04-21",
+    "englishName": "Francis",
+    "latinName": "FRANCISCVS",
+    "personalName": "Jorge Mario Bergoglio",
+    "nationalities": [
+      "Argentine"
+    ]
+  },
+  {
+    "pontiffNumber": 267,
+    "pontiffStartDate": "2025-05-08",
+    "pontiffEndDate": null,
+    "birthDate": "1955-09-14",
+    "deathDate": null,
+    "englishName": "Leo XIV",
+    "latinName": "LEO Quartus Decimus",
+    "personalName": "Robert Francis Prevost",
+    "nationalities": [
+      "American",
+      "Peruvian"
+    ]
+  }
+]
