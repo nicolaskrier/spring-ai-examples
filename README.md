@@ -18,29 +18,30 @@
 - **Chat Client**: Example covering the following features:
     - Thinking model,
     - JSON structured output,
-    - In memory chat memory,
-    - Request and response message logging.
+    - JDBC chat memory,
+    - Observability with OpenLIT,
+    - Arconia dev services for PostgreSQL and OpenLIT.
 - **RAG**: Example covering the following features:
     - Embedding model,
     - JSON data with metadata reading to add documents to Qdrant vector store only if the stored collection is empty,
     - Question and answer with a filtered search limiting data retrieval from the vector store,
     - JSON structured output,
     - JDBC chat memory,
-    - Request and response message logging,
-    - Docker Compose file containing PostgreSQL and Qdrant.
+    - Observability with Grafana OTel LGTM,
+    - Docker Compose file containing PostgreSQL, Qdrant and Grafana OTel LGTM.
 - **Tools**: Example covering the following features:
     - Custom tools to fetch current date time and to search pope either by date or by pontiff number,
     - JSON structured output,
-    - In memory chat memory,
-    - Request and response message logging.
+    - JDBC chat memory,
+    - Observability with Phoenix,
+    - Arconia dev services for PostgreSQL and Phoenix.
 - **MCP**: Example covering the following features:
     - Stateless Streamable-HTTP MCP servers offering tools to fetch current date time and to search pope either by date or by pontiff number,
     - MCP client using these two MCP servers,
     - JSON structured output,
     - JDBC chat memory,
-    - Request and response message logging,
-    - Docker Compose file containing PostgreSQL,
-    - Docker Compose file containing both MCP servers.
+    - Observability with Grafana OTel LGTM,
+    - Docker Compose file containing PostgreSQL, both MCP servers and Grafana OTel LGTM.
 
 ## 🧠 Models
 
