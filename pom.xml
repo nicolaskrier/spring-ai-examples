@@ -9,7 +9,7 @@
         <version>4.1.1</version>
         <relativePath/>
     </parent>
-    <groupId>com.github.nicolaskrier.experimental</groupId>
+    <groupId>com.github.nicolaskrier.experimental.springai</groupId>
     <artifactId>spring-ai-examples</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
