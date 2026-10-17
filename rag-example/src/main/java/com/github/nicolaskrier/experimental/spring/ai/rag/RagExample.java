@@ -1,11 +1,13 @@
 package com.github.nicolaskrier.experimental.spring.ai.rag;
 
+import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.instrumentation.logback.appender.v1_0.OpenTelemetryAppender;
 import io.qdrant.client.QdrantClient;
+import org.jspecify.annotations.NonNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
-import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
 import org.springframework.ai.chat.client.advisor.vectorstore.QuestionAnswerAdvisor;
 import org.springframework.ai.chat.memory.ChatMemory;
 import org.springframework.ai.chat.prompt.Prompt;
@@ -19,6 +21,7 @@ import org.springframework.ai.vectorstore.filter.Filter;
 import org.springframework.ai.vectorstore.qdrant.QdrantVectorStore;
 import org.springframework.ai.vectorstore.qdrant.autoconfigure.QdrantVectorStoreProperties;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -61,6 +64,22 @@ class RagExample {
     private int nextSearchedPopesNumber;
 
     @Bean
+    static BeanPostProcessor openTelemetryPostProcessor() {
+        return new BeanPostProcessor() {
+
+            @Override
+            public Object postProcessAfterInitialization(@NonNull Object bean, @NonNull String beanName) {
+                if (bean instanceof OpenTelemetry openTelemetry) {
+                    OpenTelemetryAppender.install(openTelemetry);
+                }
+
+                return bean;
+            }
+
+        };
+    }
+
+    @Bean
     DocumentReader documentReader() {
         JsonMetadataGenerator jsonMetadataGenerator = jsonMap -> {
             if (jsonMap.containsKey(PONTIFF_NUMBER_KEY)) {
@@ -96,7 +115,7 @@ class RagExample {
     ChatClient chatClient(ChatClient.Builder chatClientBuilder, ChatMemory chatMemory) {
         return chatClientBuilder.defaultSystem(systemPromptResource)
                 .defaultAdvisors(advisorSpec -> advisorSpec.param(ChatMemory.CONVERSATION_ID, UUID.randomUUID()))
-                .defaultAdvisors(MessageChatMemoryAdvisor.builder(chatMemory).build(), new SimpleLoggerAdvisor())
+                .defaultAdvisors(MessageChatMemoryAdvisor.builder(chatMemory).build())
                 .build();
     }
 
